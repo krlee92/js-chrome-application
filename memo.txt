@@ -1,0 +1,49 @@
+**
+variable(변수) 만드는 방법은 2가지.
+1. const --> 상수이므로 값 변경 불가능
+2. let --> 변수값 변경 가능
+const를 기본적으로 사용하고 업뎃이 필요한 변수라면 let사용.
+과거에는 var형 변수를 썼는데, 언어에 대한 보호를 받지 못하며,
+변수값 변경이 가능했음. 쓰지말자.
+
+undefined = 변수는 선언했지만 값을 할당하지는 않음
+null = 변수에 null(값이 없다)이 할당된다 즉, 정의됨
+
+array 규칙
+const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+daysOfWeek.push(“holiday”) .push는 추가하는 기능.
+
+**
+object는 property를 가진 데이터를 저장해주며, { } 를 사용한다.
+
+const player = {
+name : tomato,
+color : red,
+food : true,
+};
+
+console.log(player);
+
+property를 불러오는 방법은 2가지가 있다.
+
+1. console.log(player.name); => tomato
+2. console.log(player["name"]); => tomato
+
+또한 property를 바꾸는 것은 가능하지만 선언된 object를 바꾸는 것은 불가능하다.
+ex)
+const player = {
+name : tomato,
+color : red,
+food : true,
+};
+
+console.log(player);
+player.color = "blue";
+console.log(player.color);
+--> blue
+
+그리고 property를 추가 할 수도 있다.
+
+player.koreanName = "토마토";
+
+--> {name: "tomato", color: "blue", food: true, koreaName: "토마토"}
