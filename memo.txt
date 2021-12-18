@@ -104,3 +104,65 @@ title.addEventListener("click",handleTitleClick);
 
 - function이 js에게 넘겨주고 유저가 title을 click할 경우에 js가 실행버튼을 대신 눌러주길 바라는 것임( 직접 handleTitleClick(); 이렇게 하는 것이 아니라)
 - 함수에서 () 이 두 괄호를 추가함으로써 실행버튼을 누를 수 있는 거임
+
+**
+listen하고 싶은 event를 찾는 가장 좋은 방법은, 구글에 찾고 싶은 element의 이름, 예를들어 h1 html element mdn을 검색.
+우리는 javascript의 element를 원하니, 링크에 Web APIs라는 문장이 포함된 페이지를 찾아. 왜냐면 이건 JS관점의 HTML Heading Element란 의미야.
+너무 복잡하면 element를 console.dir로 출력해서 on~ 이라고 적혀있는걸 사용하면 됨.
+
+function handleMouseEnter() {
+title.innerText = "Mouse is here!"
+}
+function handleMouseLeave() {
+title.innerText = "Mouse is gone!"
+}
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+
+하지만 대부분의 경우에는 style은 CSS를 통해 변경되어야 해. 우리는 CSS파일을 어떻게 사용하지는 배워볼거야.
+
+**
+title.onclick = handleMouseEnter;
+title.addEventListener(“mouseenter” , handleMouseEnter);
+
+위에 두 코드는 동일하나 addEventListener를 선호하는 이유는
+removeEventListener을 통해서 event listener을 제거할수있기 때문이다.
+
+document에서 body,head,title 은 중요해서 언제든
+ex) document.body 로 가져올수있지만
+div나 h1 등 element 들은 querySelector getElementById등으로 찾아야한다.
+ex) document.querySelector(“h1”);
+
+window는 기본제공
+function handleWindowResize(){
+document.body.style.backgroundColor = “tomato”;
+}
+function handleWindowCopy(){
+alert(“copier”);
+}
+
+window.addEventListener(“resize”, handleWindowResize);
+window.addEventListener(“copy”, handleWindowCopy);
+
+document의 body,head,title 이런것들은 중요하기 때문에
+document.body.style~의 명령이 허용되지만, div같은것들은 호출이 안됨
+
+나머지 element들은 querySelector나 getElementById로 불러와야됨!!!!!!!
+
+**
+classList 우리가 class들의 목록으로 작업할수 있게끔 허용해준다.
+className은 이전calss를 상관하지않고 모든걸 교체해 버린다.
+
+classList를 이용하는건
+js에서 건드리는건 HTML element가 가지고있는 또하나의 요소 사용하는 것이다.
+= element의 class내용물을 조작하는 것을 허용한다는 뜻
+
+contains은 우리가 명시한 class가 HTML element의 class에 포함되어 있는지 말해준다
+
+toggle은 토큰이 존재하면 토큰제거
+토큰존재 하지않으면 토큰 추가
+
+ex)
+toggle은 h1의 classList에 clicked class가 이미있는지 확인하여
+만약있다면 toggle 이 clicked를 제거해준다
+만약 class name이 존재하지 않는다면 toggle은 classname 추가
