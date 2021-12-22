@@ -192,3 +192,15 @@ String에 붙여쓰는법 2가지
 localStorage = 작은 DB같은것
 이곳에 입력받은 유저명을 저장한다 (key값, value)
 저장할때는 setItem 불러올땐 getItem 삭제는 removeItem
+
+**
+setInterval(함수명, 밀리초);
+Interval은 매 지정시간마다 반복적으로 실행
+
+setTimeout(sayHello, 1000);
+1초 기다렸다가 한번만 실행.
+clock.innerText = `${hours} : ${minutes} : ${seconds}`;
+1->01로 채우기
+const seconds = String(date.getSeconds()).padStart(2, "0");
+padStart(문자열자리수,"채울문자열");
+padStart는 String에만쓸수있으니 숫자를 String으로 바꿔준다(감싸기)
