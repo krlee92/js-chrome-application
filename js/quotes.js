@@ -37,7 +37,7 @@ const quotes = [
       author: "Hilaire Belloc",
     },
     {
-      quote: "Travel expands the mind and fills the gap.",
+      quote: "Travel expands the mind and fills the gap",
       author: "Sheda Savage",
     },
    
